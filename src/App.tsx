@@ -389,6 +389,7 @@ function readLeaderboardEntries(now: number): LeaderboardEntry[] {
 }
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
   const [mode, setMode] = useState<AuthMode>("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -415,6 +416,11 @@ export default function App() {
   useEffect(() => {
     const timer = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const splashTimer = window.setTimeout(() => setShowSplash(false), 1500);
+    return () => window.clearTimeout(splashTimer);
   }, []);
 
   const challenge = useMemo(() => {
@@ -795,6 +801,13 @@ export default function App() {
 
   return (
     <main className="page">
+      {showSplash ? (
+        <div className="splash-screen" role="status" aria-live="polite" aria-label="Loading User Uncomfort">
+          <img src="/user-uncomfort-logo.svg" alt="User_Uncomfort logo" className="splash-logo" />
+          <p className="splash-title">User_Uncomfort</p>
+        </div>
+      ) : null}
+
       {sessionUser && profile ? (
         <div className="profile-anchor">
           <button

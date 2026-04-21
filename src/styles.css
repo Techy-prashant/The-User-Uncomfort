@@ -75,6 +75,61 @@ body::before {
   z-index: 1;
 }
 
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-content: center;
+  gap: 0.65rem;
+  text-align: center;
+  background: radial-gradient(circle at center, #1e88ff 0%, #1565c0 55%, #0b2d6f 100%);
+}
+
+.splash-logo {
+  width: min(330px, 78vw);
+  height: auto;
+  animation: blue-zoom-in 1.25s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.splash-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  animation: splash-fade-in 0.65s ease-out 0.22s both;
+}
+
+@keyframes blue-zoom-in {
+  0% {
+    transform: scale(0.65);
+    filter: drop-shadow(0 0 0 rgba(159, 210, 255, 0));
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 30px rgba(171, 219, 255, 0.55));
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 18px rgba(171, 219, 255, 0.45));
+    opacity: 1;
+  }
+}
+
+@keyframes splash-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .shell {
   width: min(920px, 100%);
   background: var(--panel);
