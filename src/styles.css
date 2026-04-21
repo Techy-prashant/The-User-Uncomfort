@@ -1331,6 +1331,48 @@ input::placeholder {
   border-color: rgba(198, 212, 235, 0.22);
 }
 
+:root[data-mode="dark"] .profile-menu,
+:root[data-mode="dark"] .profile-menu h3,
+:root[data-mode="dark"] .profile-menu .profile-field,
+:root[data-mode="dark"] .profile-menu .profile-field label,
+:root[data-mode="dark"] .profile-menu .profile-field input,
+:root[data-mode="dark"] .profile-menu .profile-field select,
+:root[data-mode="dark"] .profile-menu .upload-btn,
+:root[data-mode="dark"] .profile-menu .ghost,
+:root[data-mode="dark"] .profile-menu .toggle,
+:root[data-mode="dark"] .profile-menu .profile-preview {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+:root[data-mode="dark"] .profile-menu .profile-preview,
+:root[data-mode="dark"] .profile-menu .upload-btn,
+:root[data-mode="dark"] .profile-menu .ghost,
+:root[data-mode="dark"] .profile-menu .toggle,
+:root[data-mode="dark"] .profile-menu .profile-field input,
+:root[data-mode="dark"] .profile-menu .profile-field select {
+  box-shadow: none;
+}
+
+:root[data-mode="dark"] .profile-menu .profile-field input::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+:root[data-mode="dark"] .profile-menu .profile-field select option {
+  background: #000000;
+  color: #ffffff;
+}
+
+:root[data-mode="dark"] .profile-menu .profile-preview,
+:root[data-mode="dark"] .profile-menu .upload-btn,
+:root[data-mode="dark"] .profile-menu .ghost,
+:root[data-mode="dark"] .profile-menu .toggle,
+:root[data-mode="dark"] .profile-menu .profile-field input,
+:root[data-mode="dark"] .profile-menu .profile-field select {
+  border-color: #ffffff;
+}
+
 :root[data-mode="dark"] .toggle.active,
 :root[data-mode="dark"] .avatar-option.active {
   background: #2d3e5d;
@@ -1383,7 +1425,7 @@ input::placeholder {
 :root[data-mode="dark"] .profile-field select,
 :root[data-mode="dark"] .profile-field input,
 :root[data-mode="dark"] .profile-preview {
-  background: #f4f6fb;
+  background: #000000;
 }
 
 :root[data-mode="dark"] .shell,
@@ -1405,6 +1447,10 @@ input::placeholder {
 :root[data-mode="dark"] .captcha-image,
 :root[data-mode="dark"] .fall-zone {
   border-color: rgba(226, 233, 245, 0.62);
+}
+
+:root[data-mode="dark"] .profile-menu .upload-btn {
+  border: 2px solid #ffffff !important;
 }
 
 :root[data-mode="dark"] .top h1,
